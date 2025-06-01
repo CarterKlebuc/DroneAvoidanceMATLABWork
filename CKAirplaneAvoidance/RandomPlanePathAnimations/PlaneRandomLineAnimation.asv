@@ -1,0 +1,28 @@
+clc, clear, close all
+
+%% Generate Random Straight Line
+% Generate two sets of randomly chosen points
+x_values = [randi([-10, 10]), randi([-10, 10])];
+y_values = [randi([-10, 10]), randi([-10, 10])];
+
+% Determine Start and End Location
+starting_location = [x_values(1), y_values(1)];
+ending_location = [x_values(2), y_values(2)];
+
+% Plot line and locations
+line(x_values, y_values)
+hold on
+scatter(starting_location(1), starting_location(2), "cyan")
+scatter(ending_location(1), ending_location(2), "red")
+legend("Line", "Starting Location", "Ending Location")
+
+%% Animate Plane moving tangent to the line
+% Initialize Airplane Starting Location
+airplane_position = [starting_location(1), starting_location(2)];
+% Initalize Movement Points
+x_points = linspace(starting_location(1), ending_location(1), 100);
+y_points = linspace(starting_location(2), ending_location(2), 100);
+point = plot(x_points, y_points, '-o')
+for i = 1:100
+    
+end
